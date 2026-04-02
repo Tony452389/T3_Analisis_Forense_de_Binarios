@@ -1,41 +1,25 @@
-# Prerequisites
-*.d
+# Archivos temporales
+*.log
+*.tmp
 
-# Compiled Object files
-*.slo
-*.lo
-*.o
+# Compilación C++
 *.obj
-
-# Precompiled Headers
-*.gch
-*.pch
-
-# Linker files
+*.o
 *.ilk
-
-# Debugger Files
 *.pdb
 
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
+# Carpetas de compilación
+Debug/
+Release/
+build/
 
-# Fortran module files
-*.mod
-*.smod
+# Archivos del sistema
+.DS_Store
+Thumbs.db
 
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
+# IDE Visual Studio
+.vs/
 
-# Executables
-*.exe
-*.out
-*.app
-
-# debug information files
-*.dwo
+# Python cache
+__pycache__/
+*.pyc

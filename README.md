@@ -36,9 +36,9 @@ Realizar un análisis forense completo de un binario educativo integrando las si
 | Integrante | Responsabilidad Principal                        |
 | ---------- | ------------------------------------------------ |
 | Josue      | Desarrollo del binario y análisis estático       |
-| [Nombre]   | Ingeniería inversa (Ghidra)                      |
-| [Nombre]   | Patching y debugging (Radare2 / Cutter / x64dbg) |
-| [Nombre]   | Detección (YARA / CAPA) y reporte final          |
+| Marco      | Ingeniería inversa (Ghidra)                      |
+| Ricardo    | Patching y debugging (Radare2 / Cutter / x64dbg) |
+| Sergio     | Detección (YARA / CAPA) y reporte final          |
 
 ---
 

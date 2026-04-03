@@ -19,7 +19,34 @@ Thumbs.db
 
 # IDE Visual Studio
 .vs/
+*.vcxproj.user
 
 # Python cache
 __pycache__/
 *.pyc
+
+#Build outputs (subfloders internas)
+x64/
+x86/
+
+#IntelliSense
+ipch/
+
+#Visual Studio temporary files
+*.tlog
+*.lastbuildstate
+*.recipe
+
+#CMake (En caso de ser necesario)
+CMakeFiles/
+CMakeCache.txt
+
+#Ignore auto-generated executables
+/bin/team_sample/**/Debug/
+/bin/team_sample/**/Release/
+bin/dev/team_sample.exe
+
+#Allow manually versioned executables
+!/bin/dev/team_sample_v*.exe
+!/bin/final/*.exe
+

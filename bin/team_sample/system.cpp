@@ -1,5 +1,7 @@
 #include <windows.h>
 #include "system.h"
+#include <string>
+#include <iostream>
 
 void launchCalculator() {
 	// Ejecuta la calculadora de Windows
@@ -18,4 +20,44 @@ void showFinalMessage() {
 		"team_sample",
 		MB_OK | MB_ICONINFORMATION
 	);
-}	
+}
+
+bool checkDebugger() {
+	if (IsDebuggerPresent()) {
+		MessageBoxA(
+			NULL,
+			"Debugger detected!",
+			"Warning",
+			MB_OK | MB_ICONWARNING
+		);
+		return true;
+	}
+	return false;
+}
+
+std::string requestPassword() {
+	std::string password;
+	std::cout << "Enter password: ";
+	std::cin >> password;
+	return password;
+}
+
+bool validatePassword(const std::string& password) {
+	std::string correctPassword = "P@ssword123";
+	
+	if (password == correctPassword) {
+		std::cout << "Access granted!" << std::endl;
+
+		return true;
+	}
+	else {
+		MessageBoxA(
+			NULL,
+			"Invalid password!",
+			"Access Denied",
+			MB_OK | MB_ICONERROR
+		);
+
+		return false;
+	}
+}

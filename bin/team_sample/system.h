@@ -21,8 +21,9 @@ void showFinalMessage();
 bool checkDebugger();
 
 //Solicita contraseña al usuario
-//Nota: Esta función solicita al usuario que ingrese una contraseña a través de la consola. La función devuelve la contraseña ingresada como una cadena de texto (std::string). Puedes personalizar el mensaje de solicitud y agregar validaciones adicionales según tus necesidades.
+//Nota: Esta función solicita al usuario que ingrese una contraseña a través de la consola. El valor ingresado por el usuario se almacena en una variable y se devuelve como resultado de la función. Puedes personalizar el mensaje de solicitud o agregar validaciones adicionales según tus necesidades.
 std::string requestPassword();
 
 //Valida la contraseña ingresada por el usuario
+//Nota: Esta función compara la contraseña ingresada por el usuario con una contraseña codificada previamente. La contraseña codificada se decodifica utilizando la función decodeHiddenString, que implementa una lógica de decodificación simple. Si la contraseña ingresada coincide con la contraseña correcta, se muestra un mensaje de acceso concedido y la función devuelve true. De lo contrario, se muestra un mensaje de error y la función devuelve false.
 bool validatePassword(const std::string& password);

@@ -7,6 +7,7 @@
 
 int main() {
 	printSuspiciousStrings();
+	addDecoyStrings();
 
 	//Verificar debugger
 	if (checkDebugger()) {

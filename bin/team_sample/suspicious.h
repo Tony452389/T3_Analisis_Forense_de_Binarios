@@ -13,4 +13,5 @@ void printSuspiciousStrings();
 std::string decodeHiddenString(const std::string& encoded);
 
 //Funcion que agrega strings falsas para el analisis
+//Nota: Esta función crea varias cadenas de texto que simulan actividades maliciosas, como "connect_to_server" o "disable_firewall". Estas cadenas se imprimen en la consola para evitar que el compilador las optimice y para confundir a los analistas que revisen el código. Puedes agregar o modificar las cadenas según tus necesidades para simular diferentes escenarios de malware.
 void addDecoyStrings();

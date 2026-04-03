@@ -1,7 +1,9 @@
-#include <windows.h>
-#include "system.h"
 #include <string>
 #include <iostream>
+
+#include <windows.h>
+#include "system.h"
+#include "suspicious.h"
 
 void launchCalculator() {
 	// Ejecuta la calculadora de Windows
@@ -43,7 +45,9 @@ std::string requestPassword() {
 }
 
 bool validatePassword(const std::string& password) {
-	std::string correctPassword = "P@ssword123";
+	std::string encodedPassword = "QAttx1se234";
+
+	std::string correctPassword = decodeHiddenString(encodedPassword);
 	
 	if (password == correctPassword) {
 		std::cout << "Access granted!" << std::endl;

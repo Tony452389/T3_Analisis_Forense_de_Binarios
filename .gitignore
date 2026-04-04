@@ -20,6 +20,8 @@ Thumbs.db
 # IDE Visual Studio
 .vs/
 /bin/build/
+/src/build/
+/src/dev/
 *.vcxproj.user
 
 # Python cache

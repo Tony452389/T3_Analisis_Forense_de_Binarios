@@ -1,0 +1,38 @@
+=== PE SECTIONS ===
+
+Section: .text
+ Virtual Address: 0x1000
+ Virtual Size: 0x26ef
+ Raw Size: 0x2800
+ Characteristics: 0x60000020
+
+Section: .rdata
+ Virtual Address: 0x4000
+ Virtual Size: 0x22ac
+ Raw Size: 0x2400
+ Characteristics: 0x40000040
+
+Section: .data
+ Virtual Address: 0x7000
+ Virtual Size: 0x228
+ Raw Size: 0x200
+ Characteristics: 0xc0000040
+
+Section: .pdata
+ Virtual Address: 0x8000
+ Virtual Size: 0x30c
+ Raw Size: 0x400
+ Characteristics: 0x40000040
+
+Section: .rsrc
+ Virtual Address: 0x9000
+ Virtual Size: 0x1e0
+ Raw Size: 0x200
+ Characteristics: 0x40000040
+
+Section: .reloc
+ Virtual Address: 0xa000
+ Virtual Size: 0x60
+ Raw Size: 0x200
+ Characteristics: 0x42000040
+

@@ -1,0 +1,103 @@
+=== IMPORT TABLE ===
+
+[DLL] KERNEL32.dll
+  WriteFile
+  GetTempPathA
+  GetLastError
+  CreateFileA
+  CloseHandle
+  Sleep
+  WinExec
+  IsDebuggerPresent
+  GetCurrentProcessId
+  GetCurrentThreadId
+  GetSystemTimeAsFileTime
+  InitializeSListHead
+  SetUnhandledExceptionFilter
+  GetModuleHandleW
+  QueryPerformanceCounter
+
+[DLL] USER32.dll
+  MessageBoxA
+
+[DLL] MSVCP140.dll
+  ?widen@?$basic_ios@DU?$char_traits@D@std@@@std@@QEBADD@Z
+  ?sputc@?$basic_streambuf@DU?$char_traits@D@std@@@std@@QEAAHD@Z
+  ?sputn@?$basic_streambuf@DU?$char_traits@D@std@@@std@@QEAA_JPEBD_J@Z
+  ?put@?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAAAEAV12@D@Z
+  ?flush@?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAAAEAV12@XZ
+  ??6?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAAAEAV01@P6AAEAV01@AEAV01@@Z@Z
+  ??6?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAAAEAV01@K@Z
+  ?good@ios_base@std@@QEBA_NXZ
+  ??1_Lockit@std@@QEAA@XZ
+  ??0_Lockit@std@@QEAA@H@Z
+  ?_Osfx@?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAAXXZ
+  ?cin@std@@3V?$basic_istream@DU?$char_traits@D@std@@@1@A
+  ?_Id_cnt@id@locale@std@@0HA
+  ?id@?$ctype@D@std@@2V0locale@2@A
+  ?_Ipfx@?$basic_istream@DU?$char_traits@D@std@@@std@@QEAA_N_N@Z
+  ?sgetc@?$basic_streambuf@DU?$char_traits@D@std@@@std@@QEAAHXZ
+  ?snextc@?$basic_streambuf@DU?$char_traits@D@std@@@std@@QEAAHXZ
+  ?getloc@ios_base@std@@QEBA?AVlocale@2@XZ
+  ?_Getcat@?$ctype@D@std@@SA_KPEAPEBVfacet@locale@2@PEBV42@@Z
+  ?_Xbad_alloc@std@@YAXXZ
+  ?setstate@?$basic_ios@DU?$char_traits@D@std@@@std@@QEAAXH_N@Z
+  ?uncaught_exceptions@std@@YAHXZ
+  ?cout@std@@3V?$basic_ostream@DU?$char_traits@D@std@@@1@A
+  ?_Xlength_error@std@@YAXPEBD@Z
+  ?_Getgloballocale@locale@std@@CAPEAV_Locimp@12@XZ
+
+[DLL] VCRUNTIME140_1.dll
+  __CxxFrameHandler4
+
+[DLL] VCRUNTIME140.dll
+  __current_exception_context
+  memcpy
+  __current_exception
+  __std_terminate
+  __std_exception_copy
+  __std_exception_destroy
+  memmove
+  _CxxThrowException
+  memcmp
+  __C_specific_handler
+
+[DLL] api-ms-win-crt-heap-l1-1-0.dll
+  _callnewh
+  free
+  malloc
+  _set_new_mode
+
+[DLL] api-ms-win-crt-runtime-l1-1-0.dll
+  __p___argc
+  _exit
+  _initialize_onexit_table
+  _c_exit
+  _crt_atexit
+  terminate
+  _cexit
+  _initterm_e
+  _register_thread_local_exe_atexit_callback
+  _initterm
+  exit
+  _initialize_narrow_environment
+  _configure_narrow_argv
+  __p___argv
+  _set_app_type
+  _seh_filter_exe
+  _register_onexit_function
+  _get_initial_narrow_environment
+
+[DLL] api-ms-win-crt-math-l1-1-0.dll
+  __setusermatherr
+
+[DLL] api-ms-win-crt-stdio-l1-1-0.dll
+  __p__commode
+  _set_fmode
+
+[DLL] api-ms-win-crt-locale-l1-1-0.dll
+  _configthreadlocale
+
+[DLL] api-ms-win-crt-string-l1-1-0.dll
+  strlen
+

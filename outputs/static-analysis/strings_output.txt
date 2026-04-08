@@ -1,0 +1,343 @@
+=== ASCII STRINGS ===
+
+!This program cannot be run in DOS mode.
+!I{_
+!I{_
+!I{_
+!I{Rich
+.text
+`.rdata
+@.data
+.pdata
+@.rsrc
+@.reloc
+\$0H
+@USVWAVH
+D$@L
+t$PL
+t$XH
+D$PH
+A'H;
+t$@H
+\$PH
+|$XL
+L$PH
+T$XH
+D$PH
+\$@H
+G\$@H
+D$hL
+t$xL
+L$xL
+T$XH
+D$@H
+t$PH
+L$hH
+GL$hL
+t$ L
+L$`A
+T$hH
+GT$hL
+D$xH
+D$hH
+A^_^[]
+VWATAVAWH
+\$pH
+|1(H
+t$ I
+L1HH
+L1PH
+t!H;
+@t/f
+T1XH
+T1XH
+\$pH
+\$pL
+t$ H
+L1HH
+\$hH
+0A_A^A\_^
+VWATAVAWH
+\$xH
+t$ I
+L1PH
+t!H;
+@tpH
+T1XH
+T1XH
+\$xH
+\$xL
+t$ H
+L1HH
+\$hH
+0A_A^A\_^
+@SVAWH
+l$`I
+|$hL
+d$(L
+t$ L
+H'H;
+l$pM
+d$(H
+|$hH
+l$`L
+t$ H
+0A_^[
+D$HH
+L$HH3
+T$@H
+D$(H
+L$HH3
+GU'L
+MGH3
+@USVWATAVAWH
+pA_A^A\_^[]
+@SUVWH
+D$8H
+D$ H
+\$ H
+\$ H
+\$0H
+\$ H
+L$8H3
+H_^][
+t$ WATAUAVAWH
+L$(3
+t$$E2
+|$ L
+L$0H
+L!HH
+L$HH
+t9(H
+|$ I
+t$$D
+|$ L
+d$0H
+|$(H
+$HcQ
+L"HH
+\$PI
+A_A^A]A\_
+@SVATAVH
+l$XI
+|$`L
+|$ L
+H'H;
+|$`H
+l$XL
+|$ H
+(A^A\^[
+\$@H
+t$HH
+t!eH
+uxHc
+uTL+
+ H3E
+\$PH
+u0HcH<
+;csm
+\$03
+\$0H
+\$0H
+t$ WH
+ntel
+ineI
+Genu
+t(=`
+t!=p
+ w$H
+D$ $
+D$ "
+D$ "
+D$ H
+\$(3
+l$0H
+t$8H
+x AVH
+\$0H
+l$8H
+t$@H
+|$HH
+bad allocation
+Unknown exception
+bad array new length
+string too long
+dummy.txt
+Execution log created
+System scan complete
+Dummy file created at: 
+Failed to create dummy file. Error code: 
+MAGIC: edu-malware-sim
+Connecting to remote host...
+Initializing system scan...
+Loading enctypted payload...
+connect_to_server
+disable_firewall
+admin_login=true
+upload_data
+bad cast
+calc.exe
+team_sample
+Execution Complete
+Warning
+Debugger detected!
+Enter password: 
+QAttx1se234
+Access granted!
+Access Denied
+Invalid password!
+RSDS
+BQeM
+WD+#
+C:\Users\vboxuser\Documents\Repositorios PAC\T3_Analisis_Forense_de_Binarios\bin\dev\team_sample.pdb
+GCTL
+.text$di
+.text$mn
+.text$mn$00
+.text$x
+.text$yd
+.idata$5
+.00cfg
+.CRT$XCA
+.CRT$XCAA
+.CRT$XCL
+.CRT$XCZ
+.CRT$XIA
+.CRT$XIAA
+.CRT$XIAC
+.CRT$XIZ
+.CRT$XPA
+.CRT$XPZ
+.CRT$XTA
+.CRT$XTZ
+.rdata
+.rdata$r
+.rdata$voltmd
+.rdata$zzzdbg
+.rtc$IAA
+.rtc$IZZ
+.rtc$TAA
+.rtc$TZZ
+.xdata
+.xdata$x
+.idata$2
+.idata$3
+.idata$4
+.idata$6
+.data
+.data$r
+.data$rs
+.bss
+.pdata
+.rsrc$01
+.rsrc$02
+@08~
+P2@&
+WriteFile
+GetTempPathA
+GetLastError
+CreateFileA
+CloseHandle
+Sleep
+WinExec
+IsDebuggerPresent
+KERNEL32.dll
+MessageBoxA
+USER32.dll
+?uncaught_exceptions@std@@YAHXZ
+?cout@std@@3V?$basic_ostream@DU?$char_traits@D@std@@@1@A
+?_Xlength_error@std@@YAXPEBD@Z
+?_Osfx@?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAAXXZ
+?setstate@?$basic_ios@DU?$char_traits@D@std@@@std@@QEAAXH_N@Z
+?widen@?$basic_ios@DU?$char_traits@D@std@@@std@@QEBADD@Z
+?sputc@?$basic_streambuf@DU?$char_traits@D@std@@@std@@QEAAHD@Z
+?sputn@?$basic_streambuf@DU?$char_traits@D@std@@@std@@QEAA_JPEBD_J@Z
+?put@?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAAAEAV12@D@Z
+?flush@?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAAAEAV12@XZ
+??6?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAAAEAV01@P6AAEAV01@AEAV01@@Z@Z
+??6?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAAAEAV01@K@Z
+?good@ios_base@std@@QEBA_NXZ
+??1_Lockit@std@@QEAA@XZ
+??0_Lockit@std@@QEAA@H@Z
+?_Getgloballocale@locale@std@@CAPEAV_Locimp@12@XZ
+?cin@std@@3V?$basic_istream@DU?$char_traits@D@std@@@1@A
+?_Id_cnt@id@locale@std@@0HA
+?id@?$ctype@D@std@@2V0locale@2@A
+?_Ipfx@?$basic_istream@DU?$char_traits@D@std@@@std@@QEAA_N_N@Z
+?sgetc@?$basic_streambuf@DU?$char_traits@D@std@@@std@@QEAAHXZ
+?snextc@?$basic_streambuf@DU?$char_traits@D@std@@@std@@QEAAHXZ
+?getloc@ios_base@std@@QEBA?AVlocale@2@XZ
+?_Getcat@?$ctype@D@std@@SA_KPEAPEBVfacet@locale@2@PEBV42@@Z
+MSVCP140.dll
+?_Xbad_alloc@std@@YAXXZ
+__CxxFrameHandler4
+__std_exception_destroy
+__std_exception_copy
+__std_terminate
+__C_specific_handler
+_CxxThrowException
+__current_exception
+__current_exception_context
+VCRUNTIME140_1.dll
+VCRUNTIME140.dll
+free
+malloc
+_callnewh
+_seh_filter_exe
+_set_app_type
+__setusermatherr
+_configure_narrow_argv
+_initialize_narrow_environment
+_get_initial_narrow_environment
+_initterm
+_initterm_e
+exit
+_exit
+_set_fmode
+__p___argc
+__p___argv
+_cexit
+_c_exit
+_register_thread_local_exe_atexit_callback
+_configthreadlocale
+_set_new_mode
+__p__commode
+_initialize_onexit_table
+_register_onexit_function
+_crt_atexit
+terminate
+api-ms-win-crt-heap-l1-1-0.dll
+api-ms-win-crt-runtime-l1-1-0.dll
+api-ms-win-crt-math-l1-1-0.dll
+api-ms-win-crt-stdio-l1-1-0.dll
+api-ms-win-crt-locale-l1-1-0.dll
+QueryPerformanceCounter
+GetCurrentProcessId
+GetCurrentThreadId
+GetSystemTimeAsFileTime
+InitializeSListHead
+SetUnhandledExceptionFilter
+GetModuleHandleW
+memcmp
+memcpy
+memmove
+strlen
+api-ms-win-crt-string-l1-1-0.dll
+.?AVbad_alloc@std@@
+.?AVexception@std@@
+.?AVbad_array_new_length@std@@
+.?AVbad_cast@std@@
+.?AVtype_info@@
+<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
+<assembly xmlns='urn:schemas-microsoft-com:asm.v1' manifestVersion='1.0'>
+  <trustInfo xmlns="urn:schemas-microsoft-com:asm.v3">
+    <security>
+      <requestedPrivileges>
+        <requestedExecutionLevel level='asInvoker' uiAccess='false' />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+</assembly>
+
+=== UNICODE STRINGS ===
+

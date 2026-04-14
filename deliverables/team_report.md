@@ -138,20 +138,17 @@ El análisis se realizó utilizando herramientas de depuración que permitieron 
 
 **Herramientas utilizadas:**
 
-• [Nombre del debugger utilizado]  
-• [Herramienta adicional si aplica]
+• x64dbg (x32)
 
 ---
 
-### 6.2 Identificación de Mecanismos de Protección
+### 6.2 Identificación del Punto Crítico
 
-Durante la ejecución del programa, se identificaron mecanismos diseñados para detectar condiciones específicas durante la ejecución.
+Durante el análisis se identificó una instrucción crítica ubicada en la dirección **0x004079aa**, correspondiente a una llamada a la función **WinExec**.
 
-**Hallazgos principales:**
+Esta función era responsable de ejecutar el proceso externo **calc.exe**, lo que representaba un comportamiento clave dentro del flujo del programa.
 
-• [Descripción breve del comportamiento detectado]  
-• [Función o técnica identificada]  
-• [Ubicación aproximada en el código]
+Se estableció un breakpoint en esta dirección para analizar su comportamiento durante la ejecución.
 
 ---
 
@@ -161,9 +158,10 @@ Se realizó la modificación controlada del binario con el objetivo de alterar e
 
 **Acciones realizadas:**
 
-• [Descripción del cambio aplicado]  
-• [Dirección o instrucción modificada]  
-• [Motivo del parche]
+ Identificación de la instrucción CALL a **WinExec** mediante análisis estático en Ghidra.  
+• Localización de la dirección **0x004079aa** como punto de modificación.  
+• Reemplazo de la instrucción original por **cinco instrucciones NOP (90 90 90 90 90)** mediante un editor hexadecimal.  
+• Verificación de que el tamaño del archivo permaneciera sin cambios para evitar corrupción del ejecutable.  
 
 ---
 
@@ -173,9 +171,10 @@ Después de aplicar el parche, el programa mostró un comportamiento modificado 
 
 **Resultados observados:**
 
-• [Descripción del comportamiento posterior al parche]  
-• [Confirmación del éxito del parche]  
-• [Referencia a capturas en screenshots/patching]
+• El programa continuó su ejecución normal.  
+• La ejecución de **calc.exe** fue completamente omitida.  
+• El flujo del programa permaneció estable tras el parche.  
+• Se confirmó la creación del archivo **dummy.txt**, indicando que el flujo principal del programa se mantuvo funcional.  
 
 ---
 
@@ -185,8 +184,8 @@ Como resultado del proceso de debugging y patching, se generó una versión modi
 
 **Archivo generado:**
 
-• Nombre del archivo: team_sample_patched.exe  
-• Ubicación: bin/patched/  
+• Nombre del archivo: **team_sample_patched.exe**  
+• Ubicación: **bin/patched/**  
 
 Esta versión permitió ejecutar el flujo completo del programa bajo condiciones controladas, facilitando su análisis posterior.
 

@@ -1,24 +1,62 @@
 # Log de Debugging
 
-Herramienta: x64dbg (x32)
-Metodología: Análisis de flujo paso a paso
+Herramienta: x64dbg (x32)  
+Metodología: Análisis de flujo paso a paso  
 
-BITÁCORA DE SESIÓN:
+---
 
-    Entry Point: Se cargó el binario y se avanzó con F9 hasta el punto de entrada principal. Se validó la carga de KERNEL32.DLL.
+## Bitácora de Sesión
 
-    Breakpoint: Se estableció un punto de interrupción en 0x004079aa.
+### 1. Carga del Binario
 
-    Inspección de Registros: Se observó que el registro EIP (puntero de instrucción) llegó a la zona parcheada.
+Se cargó el binario **team_sample.exe** en el entorno de depuración utilizando x64dbg.
 
-    Ejecución del Parche: Al presionar F8, el debugger recorrió los bytes 0x90 (NOPs). El programa no saltó a ninguna subrutina externa.
+Se avanzó con la ejecución (F9) hasta alcanzar el **Entry Point**, verificando la correcta carga de módulos del sistema, incluyendo **KERNEL32.DLL**.
 
-    Verificación de Pila: Se confirmó que el registro ESP (Stack Pointer) no sufrió desalineación, manteniendo la estabilidad del programa.
+---
 
-HALLAZGOS:
+### 2. Identificación del Punto Crítico
 
-    El parche previene la ejecución del proceso hijo.
+Se estableció un breakpoint en la dirección **0x004079aa**, correspondiente a una instrucción relacionada con la ejecución de un proceso externo mediante la función **WinExec**.
 
-    El binario finaliza con código de retorno 0x0 (Success).
+Este punto fue seleccionado debido a que representaba la llamada responsable de lanzar el proceso **calc.exe**.
 
-    Se confirma la creación del archivo de persistencia dummy.txt en el directorio raíz del binario.
+---
+
+### 3. Inspección del Flujo de Ejecución
+
+Durante la ejecución paso a paso (F8), se observó que el registro **EIP (Instruction Pointer)** alcanzó la dirección objetivo definida en el breakpoint.
+
+Se confirmó que la ejecución se encontraba en la zona donde posteriormente se aplicaría el parche.
+
+---
+
+### 4. Ejecución Tras el Parche
+
+Después de aplicar el parche (reemplazo por instrucciones **NOP**), se ejecutó nuevamente el binario.
+
+Durante la ejecución paso a paso (F8), el debugger recorrió los bytes **0x90 (NOP)**, evitando la llamada a la función **WinExec**.
+
+Como resultado:
+
+- El programa continuó su ejecución normal  
+- No se realizó la llamada a **calc.exe**  
+- No se produjo salto a subrutinas externas  
+
+---
+
+### 5. Verificación de Estabilidad
+
+Se verificó el comportamiento de la pila durante la ejecución.
+
+El registro **ESP (Stack Pointer)** se mantuvo alineado correctamente, confirmando que el parche no generó corrupción en la pila ni inestabilidad del programa.
+
+---
+
+## Hallazgos
+
+- El parche previene la ejecución del proceso hijo **calc.exe**.
+
+- El binario finaliza con código de retorno **0x0 (Success)**.
+
+- Se confirma la creación del archivo **dummy.txt**, utilizado como archivo de prueba generado durante la ejecución del programa.

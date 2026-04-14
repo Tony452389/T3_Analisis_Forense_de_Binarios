@@ -1,28 +1,256 @@
-# T3_Analisis_Forense_de_Binarios
 
-## 📌 Descripción
+# T3 – Análisis Forense de Binarios
 
-Este repositorio contiene el desarrollo completo de la **Tarea 3: Análisis Forense de Binarios**, cuyo objetivo es realizar un análisis integral de un binario educativo utilizando técnicas de análisis estático, ingeniería inversa, patching, debugging dinámico y detección.
+## Descripción General
 
-El binario fue diseñado para simular comportamientos típicos de software sospechoso con fines educativos, permitiendo a los integrantes del equipo aplicar herramientas reales utilizadas en análisis forense y reverse engineering.
+Este repositorio contiene el desarrollo completo de la **Tarea 3 – Análisis Forense de Binarios**, cuyo objetivo es analizar un ejecutable diseñado para simular comportamientos comúnmente observados en software sospechoso.
 
----
+El proyecto incluye:
 
-## 🎯 Objetivo del Proyecto
+- Desarrollo de un binario educativo en C++
+- Análisis estático mediante herramientas especializadas
+- Análisis mediante ingeniería inversa
+- Identificación de capacidades con FLARE CAPA
+- Creación de reglas YARA para detección
+- Técnicas de debugging y patching
+- Documentación completa del proceso
 
-Desarrollar y analizar un binario educativo que permita aplicar técnicas reales de análisis forense digital, incluyendo:
-
-* Análisis estático del ejecutable
-* Ingeniería inversa mediante Ghidra
-* Patching del binario
-* Debugging dinámico
-* Creación de reglas YARA
-* Clasificación funcional mediante CAPA
-* Documentación técnica profesional
+Este repositorio está organizado para facilitar la revisión técnica y académica del trabajo realizado.
 
 ---
 
-## 👥 Integrantes del Equipo
+## ⚠️ Aviso Importante
+
+Este repositorio contiene un **binario educativo diseñado únicamente con fines académicos**.
+
+El ejecutable:
+
+- **NO es malware real**
+- **NO contiene código malicioso**
+- **NO realiza conexiones reales**
+- **NO modifica configuraciones críticas del sistema**
+
+El programa simula comportamientos típicos utilizados en análisis forense y seguridad informática.
+
+Se recomienda ejecutar el binario **únicamente en entornos controlados**, como:
+
+- Máquinas virtuales
+- Entornos de laboratorio
+- Sistemas de prueba
+
+---
+
+## Objetivo del Proyecto
+
+El objetivo principal fue aplicar técnicas de análisis forense de binarios para:
+
+- Identificar comportamiento interno de un ejecutable
+- Analizar funciones y cadenas relevantes
+- Estudiar mecanismos de detección de debugger
+- Simular manipulación de archivos y procesos
+- Implementar técnicas básicas de patching
+- Crear reglas YARA para detección basada en patrones
+
+---
+
+## Características del Binario Analizado
+
+Archivo principal:
+
+    bin/final/team_sample.exe
+
+Características:
+
+- Formato: Portable Executable (PE)
+- Arquitectura: x64
+- Lenguaje: C++
+- Plataforma objetivo: Windows
+- Tipo: Simulación educativa
+
+Comportamientos implementados:
+
+- Escritura de archivos
+- Ejecución de procesos externos
+- Detección de debugger
+- Simulación de operaciones del sistema
+- Uso de API de Windows
+
+---
+
+## Estructura del Repositorio
+
+    T3_Analisis_Forense_de_Binarios/
+
+    ├── bin/
+    │   ├── dev/
+    │   │   ├── team_sample_v1.exe
+    │   │   ├── team_sample_v2.exe
+    │   │   └── team_sample_v3.exe
+    │   │
+    │   ├── final/
+    |   │   └── team_sample.exe
+    |   |
+    |   └── pathced/
+    |        └── team_sample_patched.exe
+    │
+    ├── deliverables/
+    │   ├── static_overview.md
+    │   ├── ghidra_notes.md
+    │   ├── capa_report.txt
+    │   └── team_report.md
+    │
+    ├── docs/
+    │   ├── development_guides/
+    │   │   ├── binary_plan.md
+    │   │   ├── functions_design.md
+    │   │   └── versions.md
+    │   │
+    │   ├── detection/
+    │   │   └── team_rule.yara
+    │   │
+    │   └── team_workflow/
+    │       └── workflow.md
+    │
+    ├── screenshots/
+    │   ├── debugging/
+    │   ├── ghidra/
+    │   ├── patching/
+    |   ├── yara/
+    │   └── static_analysis/
+    │
+    ├── src/
+    │   └── team_sample/
+    │
+    └── static_analysis/
+        ├── outputs/
+        └── tools/
+
+---
+
+## Herramientas Utilizadas
+
+Durante el desarrollo y análisis se utilizaron las siguientes herramientas:
+
+### Desarrollo
+
+- Visual Studio
+- C++
+- Windows API
+
+### Análisis Estático
+
+- Strings extraction
+- PE analysis scripts
+- Ghidra
+
+### Análisis de Capacidades
+
+- FLARE CAPA
+
+### Debugging y Patching
+
+- Debugger (según integrante)
+- Herramientas de modificación binaria
+
+### Detección
+
+- YARA
+
+---
+
+## Flujo de Trabajo
+
+El proyecto se desarrolló siguiendo un flujo estructurado:
+
+1. Diseño del comportamiento del binario
+2. Implementación en C++
+3. Compilación y pruebas
+4. Análisis estático
+5. Ingeniería inversa con Ghidra
+6. Identificación de capacidades con CAPA
+7. Creación de reglas YARA
+8. Debugging y patching
+9. Integración del reporte final
+
+---
+
+## Resultados Obtenidos
+
+Durante el análisis se identificaron:
+
+- Uso de funciones de manipulación de archivos
+- Ejecución de procesos externos
+- Detección básica de debugger
+- Cadenas simuladas relacionadas con actividades del sistema
+- Patrones identificables mediante reglas YARA
+- Comportamiento modificable mediante patching
+
+---
+
+## Entregables Principales
+
+Los documentos principales del proyecto se encuentran en:
+
+    deliverables/
+
+Incluyen:
+
+- static_overview.md  
+  Resultados del análisis estático
+
+- ghidra_notes.md  
+  Resultados de ingeniería inversa
+
+- capa_report.txt  
+  Capacidades detectadas con CAPA
+
+- team_report.md  
+  Reporte técnico consolidado
+
+---
+
+## Evidencias Visuales
+
+Las capturas utilizadas como evidencia se encuentran en:
+
+    screenshots/
+
+Organizadas por:
+
+- Static analysis
+- Ghidra
+- Debugging
+- Patching
+- Yara
+
+---
+
+## Regla YARA
+
+La regla de detección desarrollada se encuentra en:
+
+    docs/detection/team_rule.yara
+
+Esta regla permite identificar el binario mediante cadenas únicas presentes en el ejecutable.
+
+---
+
+## Limitaciones
+
+Este proyecto fue desarrollado con fines educativos.
+
+Algunas limitaciones incluyen:
+
+- No se realizaron conexiones reales de red
+- No se implementó persistencia real
+- Algunas funcionalidades fueron simuladas mediante cadenas internas
+- El análisis dinámico depende del entorno de ejecución
+
+---
+
+## Autores
+
+Equipo de trabajo:
 
 | Integrante                           | Rol Principal                                    |
 | ------------------------------------ | ------------------------------------------------ |
@@ -33,205 +261,8 @@ Desarrollar y analizar un binario educativo que permita aplicar técnicas reales
 
 ---
 
-## 🧠 Descripción General del Binario
+## Licencia
 
-El binario desarrollado simula múltiples comportamientos sospechosos comúnmente observados en software malicioso educativo.
+Este proyecto fue desarrollado únicamente con fines académicos.
 
-Entre sus funcionalidades principales se incluyen:
-
-* Impresión de cadenas sospechosas
-* Generación de cadenas señuelo
-* Detección de debugger mediante API del sistema
-* Solicitud y validación de contraseña oculta
-* Ejecución de procesos del sistema
-* Implementación de retrasos intencionales
-* Creación de archivos en directorios temporales
-* Presentación de mensajes mediante interfaz gráfica
-
-Estas acciones fueron diseñadas para facilitar su análisis mediante herramientas de ingeniería inversa y análisis forense.
-
----
-
-## 🧩 Estructura del Repositorio
-
-```text
-T3_Analisis_Forense_de_Binarios/
-
-├── src/
-│   └── team_sample/
-│       ├── main.cpp
-│       ├── suspicious.cpp
-│       ├── suspicious.h
-│       ├── file_ops.cpp
-│       ├── file_ops.h
-│       ├── system.cpp
-│       ├── system.h
-│       ├── team_sample.slnx
-│       ├── team_sample.vcxproj
-│       └── team_sample.vcxproj.filters
-│
-├── bin/
-│   ├── dev/
-│   │   ├── team_sample_v1.exe
-│   │   ├── team_sample_v2.exe
-│   │   └── team_sample_v3.exe
-│   │
-│   └── final/
-│       └── team_sample.exe
-│
-├── analysis/
-│   └── (documentación del análisis estático)
-│
-├── docs/
-│   ├── workflow.md
-│   ├── disclaimer.md
-│   └── binary/
-│       ├── binary_plan.md
-│       ├── functions_design.md
-│       └── versions.md
-│
-├── outputs/
-│   └── (resultados generados por herramientas)
-│
-├── report/
-│   └── (reporte final del equipo)
-│
-├── rules/
-│   └── (reglas YARA)
-│
-├── screenshots/
-│   ├── ghidra/
-│   ├── patching/
-│   └── debugging/
-│
-├── README.md
-└── .gitignore
-```
-
----
-
-## 🛠️ Herramientas Utilizadas
-
-Las herramientas empleadas en este proyecto incluyen:
-
-### Desarrollo
-
-* Visual Studio 2026
-* Lenguaje C++
-* Windows API
-
-### Análisis Estático
-
-* Python 3
-* pefile
-* strings
-
-### Ingeniería Inversa
-
-* Ghidra
-
-### Patching y Debugging
-
-* Radare2
-* Cutter
-* x64dbg
-
-### Detección
-
-* YARA
-* CAPA
-
-### Control de Versiones
-
-* Git
-* GitHub
-
----
-
-## ⚙️ Requisitos para Compilación
-
-Para compilar el proyecto desde el código fuente:
-
-1. Abrir el archivo:
-
-```text
-src/team_sample/team_sample.slnx
-```
-
-2. Compilar la solución en Visual Studio.
-
-3. Ejecutar el programa generado.
-
----
-
-## 📦 Versiones del Binario
-
-Las versiones intermedias del binario se encuentran en:
-
-```text
-bin/dev/
-```
-
-Mientras que la versión final utilizada para el análisis se encuentra en:
-
-```text
-bin/final/team_sample.exe
-```
-
----
-
-## 📌 Uso del Binario
-
-El archivo principal para análisis es:
-
-```text
-bin/final/team_sample.exe
-```
-
-Este archivo será utilizado por las herramientas del equipo para:
-
-* Ingeniería inversa
-* Debugging
-* Creación de reglas YARA
-* Clasificación CAPA
-
----
-
-## ⚠️ Advertencia de Seguridad
-
-Este repositorio contiene un binario educativo diseñado con fines académicos.
-
-Aunque el ejecutable no contiene malware real, su comportamiento simulado puede generar alertas por parte de sistemas antivirus o herramientas de seguridad.
-
-Se recomienda ejecutar el binario únicamente en:
-
-* Entornos virtualizados
-* Máquinas virtuales controladas
-* Ambientes de laboratorio
-
-Consultar:
-
-```text
-docs/disclaimer.md
-```
-
-para información adicional.
-
----
-
-## 📊 Estado del Proyecto
-
-🟢 Binario final generado
-🟢 Estructura del repositorio completa
-🟡 Análisis en progreso
-🟡 Ingeniería inversa pendiente
-🟡 Generación de reglas YARA pendiente
-🟡 Reporte final en desarrollo
-
----
-
-## 📝 Notas
-
-Este proyecto forma parte de un ejercicio académico orientado a la práctica de análisis forense de binarios y simulación de comportamiento sospechoso controlado.
-
-Todos los elementos contenidos en este repositorio tienen fines educativos exclusivamente.
+El contenido no debe utilizarse fuera de contextos educativos o de laboratorio.

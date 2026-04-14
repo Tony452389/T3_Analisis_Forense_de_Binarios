@@ -1,59 +1,109 @@
 Reporte Técnico de Análisis Estático con FLARE capa para team_sample.exe
 1. Información General del Binario
 Archivo: team_sample.exe
-Formato: Portable Executable (PE)
-Arquitectura: amd64 (64 bits)
-Sistema Operativo Destino: Windows
-Tipo de análisis: Estático
+Reporte Técnico de Análisis Estático con FLARE capa para team_sample.exe
+
+1. Información General del Binario
+
+Archivo: team_sample.exe  
+Formato: Portable Executable (PE)  
+Arquitectura: amd64 (64 bits)  
+Sistema Operativo Destino: Windows  
+Tipo de análisis: Estático  
+
 Hashes:
-o	MD5: 050984689e963970c6b659b44ac07d5e
-o	SHA1: d305c21474267b846958da3e4a3b88c1541ed85d
-o	SHA256: 335937d1c5e6a3e730a7c4f05537861e2c7a2a66b2f44342ac4b7d2e1cab6575
+o MD5: 050984689e963970c6b659b44ac07d5e  
+o SHA1: d305c21474267b846958da3e4a3b88c1541ed85d  
+o SHA256: 335937d1c5e6a3e730a7c4f05537861e2c7a2a66b2f44342ac4b7d2e1cab6575  
 
-2. Análisis de Tácticas y Técnicas MITRE ATT&CK Identificadas
-2.1. Defensa y Evasión (Defense Evasion)
-•	Táctica: DEFENSE EVASION
-•	Descripción: El malware incorpora comprobaciones para detectar debugger. Esto suele incluir la búsqueda de artefactos específicos en el sistema, como dispositivos virtuales, procesos o drivers característicos.
+---
 
-2.2. Descubrimiento (Discovery)
-•	Táctica: DISCOVERY
-•	Técnica: File and Directory Discovery [T1083]
-•	Descripción: El archivo realiza operaciones para crear y modificar archivos y directorios del sistema operativo Windows. Esto puede incluir llamadas a funciones como WinAPI o similares para explorar el sistema de archivos.
+2. Análisis de Tácticas y Técnicas MITRE ATT&CK Identificadas  
 
-2.3. Ejecución (Execution)
-•	Táctica: EXECUTION
-•	Técnica: Shared Modules [T1129]
-•	Descripción: El malware utiliza módulos compartidos (API de Windows) para llevar a cabo su funcionamiento, lo que puede facilitar la modularidad, la ocultación y la evasión.
+2.1 Defensa y Evasión (Defense Evasion)
 
-3. Comportamientos y Objetivos según MITRE Malware Behavior Catalog (MBC)
-3.1. FILE SYSTEM
-•	Comportamiento Detectado: Writes File [C0052]
-•	Detalles Técnicos:
-El malware tiene la capacidad de escribir archivos en el sistema operativo Windows. Técnicamente, puede estar usando funciones como CreateFile, WriteFile, o equivalentes para colocar archivos maliciosos adicionales, configuraciones, logs, o payloads.
+• Táctica: DEFENSE EVASION  
 
-3.2. PROCESS
-•	Comportamiento Detectado: Create Process [C0017]
-•	Detalles Técnicos:
-El binario puede crear nuevos procesos en Windows, probablemente a través de funciones como CreateProcess, ShellExecute o similares. Esto suele usarse para lanzar componentes adicionales del malware, ejecutar comandos o para inyección de procesos.
+• Descripción:  
+El binario incorpora una comprobación básica para detectar la presencia de un debugger mediante la función **IsDebuggerPresent**.
 
-4. Análisis Técnico Adicional
-4.1. Modificación del sistema de archivos
-•	El malware está programado para escribir archivos, lo que podría usarse para:
-o	Colocar archivos de configuración.
-o	Instalar persistencia (ej. servicios, tareas programadas).
-o	Desplegar componentes adicionales o payloads secundarios.
+Este mecanismo permite identificar si el programa está siendo ejecutado bajo depuración, lo cual es una técnica común utilizada para dificultar el análisis dinámico.
 
-4.2. Creación y manipulación de procesos
-•	La capacidad de crear procesos es clave para ejecutar otros componentes maliciosos, lanzar shells, o realizar ejecución en contexto diferente.
-•	También puede usarse para técnicas de inyección de código o evasión, creando procesos legítimos y luego manipulándolos.
+---
 
-4.3. Posibles vectores de ataque o usos
-•	Este binario probablemente sea parte de un malware avanzado o herramienta de ataque que:
-o	Realiza reconocimiento del entorno para adaptarse o seleccionar objetivos.
-o	Interactúa activamente con el sistema operativo para ejecutar cargas maliciosas y mantener persistencia.
+2.2 Ejecución (Execution)
 
-5. Recomendaciones para Análisis y Mitigación
-•	Realizar análisis dinámico en un entorno físico o muy bien configurado para evadir detección anti-VM.
-•	Revisar logs y sistemas para detección de procesos hijos o archivos recientemente escritos por este ejecutable.
-•	Monitorear actividad relacionada con creación de procesos y exploración del sistema de archivos.
+• Táctica: EXECUTION  
 
+• Descripción:  
+El binario ejecuta un proceso externo mediante el uso de la función **WinExec**, lo que permite lanzar programas adicionales dentro del sistema operativo.
+
+Este comportamiento es común en programas que simulan la ejecución de componentes secundarios o payloads dentro de un entorno controlado.
+
+---
+
+3. Comportamientos y Objetivos según MITRE Malware Behavior Catalog (MBC)  
+
+3.1 FILE SYSTEM  
+
+• Comportamiento Detectado: Writes File [C0052]  
+
+• Detalles Técnicos:  
+El programa tiene la capacidad de escribir archivos en el sistema operativo Windows. Técnicamente, utiliza funciones como **CreateFile**, **WriteFile**, y **CloseHandle** para crear y escribir datos en archivos dentro del sistema.
+
+Este comportamiento puede emplearse para crear archivos de prueba, registros o datos simulados durante la ejecución del programa.
+
+---
+
+3.2 PROCESS  
+
+• Comportamiento Detectado: Create Process [C0017]  
+
+• Detalles Técnicos:  
+El binario crea nuevos procesos en Windows mediante el uso de la función **WinExec**, permitiendo ejecutar programas externos como parte del flujo del programa.
+
+Este tipo de comportamiento es común en aplicaciones que requieren iniciar procesos adicionales durante su ejecución.
+
+---
+
+4. Análisis Técnico Adicional  
+
+4.1 Modificación del sistema de archivos  
+
+• El programa está diseñado para escribir archivos, lo que puede usarse para:
+
+o Crear archivos de registro o datos temporales.  
+o Simular almacenamiento de información generada durante la ejecución.  
+o Demostrar técnicas comunes de manipulación de archivos en entornos Windows.  
+
+---
+
+4.2 Creación y manipulación de procesos  
+
+• La capacidad de crear procesos permite ejecutar programas adicionales durante la ejecución del binario.
+
+• Este comportamiento puede utilizarse para simular la ejecución de componentes secundarios dentro del flujo del programa.
+
+---
+
+4.3 Posibles vectores de uso  
+
+• Este binario corresponde a una **simulación educativa**, diseñada para replicar comportamientos comunes observados en software potencialmente malicioso dentro de un entorno controlado.
+
+• Sus funcionalidades permiten demostrar técnicas como:
+
+o Manipulación de archivos  
+o Ejecución de procesos  
+o Detección básica de depuración  
+
+Estas características permiten estudiar el comportamiento de software sospechoso sin representar una amenaza real para el sistema.
+
+---
+
+5. Recomendaciones para Análisis y Mitigación  
+
+• Se recomienda ejecutar el análisis dinámico únicamente en entornos controlados, como máquinas virtuales o laboratorios de pruebas, con el fin de observar el comportamiento del programa sin afectar sistemas reales.
+
+• Revisar la actividad del sistema para identificar archivos generados o procesos ejecutados por el programa durante su ejecución.
+
+• Monitorear la creación de procesos y operaciones de escritura en archivos para comprender completamente el flujo del programa.

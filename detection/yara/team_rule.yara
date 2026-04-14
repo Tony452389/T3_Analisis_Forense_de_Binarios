@@ -1,4 +1,4 @@
-rule Comportamiento_Sospechoso
+rule TeamSample_Simulation
 {
     meta:
         descripcion = "Detecta el malware escolar por strings unicas"
@@ -14,5 +14,5 @@ rule Comportamiento_Sospechoso
         $s6 = "admin_login=true" ascii wide nocase
 
     condition:
-        $any of them
+        any of them
 }

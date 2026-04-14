@@ -1,23 +1,59 @@
 # Reporte de Patching
 
-Binario: team_sample.exe
-Objetivo: Desactivar la apertura automática de calc.exe
+Binario: team_sample.exe  
+Objetivo: Desactivar la ejecución automática del proceso **calc.exe**
 
-DETALLES TÉCNICOS:
+---
 
-    Dirección de memoria: 0x004079aa
+## Detalles Técnicos
 
-    Instrucción original: CALL (Invocación a WinExec)
+**Dirección de memoria modificada:**  
+0x004079aa  
 
-    Instrucción de parche: 90 90 90 90 90 (NOP - No Operation)
+**Instrucción original:**  
+CALL a la función **WinExec**, responsable de ejecutar el proceso externo **calc.exe**.
 
-PROCEDIMIENTO:
+**Instrucción aplicada (parche):**  
+90 90 90 90 90  
+(NOP - No Operation)
 
-    Se identificó la dirección del CALL mediante el análisis estático en Ghidra.
+Se reemplazaron **5 bytes consecutivos** correspondientes a la instrucción CALL original.  
+El uso de instrucciones **NOP (0x90)** permitió neutralizar la llamada sin alterar la alineación del código ni modificar el tamaño del archivo ejecutable.
 
-    Se utilizó un editor hexadecimal para reemplazar los bytes del CALL por instrucciones NOP.
+---
 
-    Se validó que el tamaño del archivo permaneciera idéntico para no corromper la estructura del ejecutable.
+## Procedimiento
 
-RESULTADO:
-El parche fue exitoso. Al ejecutar el binario modificado, el programa continúa su flujo normal, crea el archivo dummy.txt, pero ignora completamente la ejecución de la calculadora.
+1. Se identificó la instrucción CALL responsable de la ejecución de **calc.exe** mediante análisis estático utilizando **Ghidra**.
+
+2. Se localizó la dirección **0x004079aa**, correspondiente al punto crítico donde se realizaba la llamada a **WinExec**.
+
+3. Se utilizó un editor hexadecimal para reemplazar los bytes originales de la instrucción CALL por cinco instrucciones **NOP (0x90)**.
+
+4. Se verificó que el tamaño total del archivo permaneciera idéntico, evitando la corrupción de la estructura interna del ejecutable.
+
+5. Posteriormente, se ejecutó el binario modificado en el entorno de debugging para validar el comportamiento tras la modificación.
+
+---
+
+## Resultado
+
+El parche fue aplicado exitosamente.
+
+Después de la modificación:
+
+- El programa continúa su flujo normal de ejecución.
+- La llamada a **WinExec** es omitida.
+- El proceso **calc.exe** ya no es ejecutado.
+- El programa genera correctamente el archivo **dummy.txt**, confirmando que el flujo principal permanece funcional.
+
+---
+
+## Verificación
+
+La verificación del parche se realizó mediante:
+
+- Ejecución del binario modificado en el entorno de debugging.
+- Observación del flujo de ejecución sobre instrucciones **NOP**.
+- Confirmación de la ausencia de ejecución del proceso **calc.exe**.
+- Validación del comportamiento esperado del programa tras la modificación.

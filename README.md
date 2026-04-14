@@ -112,7 +112,6 @@ Comportamientos implementados:
     │       └── workflow.md
     │
     ├── screenshots/
-    │   ├── debugging/
     │   ├── ghidra/
     │   ├── patching/
     |   ├── yara/

@@ -255,8 +255,8 @@ Equipo de trabajo:
 | ------------------------------------ | ------------------------------------------------ |
 | **Josue Israel Castro Aguilar**      | Desarrollo del binario y análisis estático       |
 | **Marco Antonio Vargas Ruiz**        | Ingeniería inversa (Ghidra)                      |
-| **Sergio Pedro Sepulveda Rodriguez** | Patching y debugging (Radare2 / Cutter / x64dbg) |
-| **Ricardo Hervey Estrada Garcia**    | Detección (YARA / CAPA) y reporte final          |
+| **Ricardo Hervey Estrada Garcia**    | Patching y debugging (Radare2 / Cutter / x64dbg) |
+| **Sergio Pedro Sepulveda Rodriguez** | Detección (YARA / CAPA) y reporte final          |
 
 ---
 

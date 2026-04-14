@@ -105,12 +105,12 @@ Comportamientos implementados:
     │   │   ├── functions_design.md
     │   │   └── versions.md
     │   │
-    │   ├── detection/
-    │   │   └── team_rule.yara
-    │   │
     │   └── team_workflow/
     │       └── workflow.md
-    │
+    |
+    ├── detection/
+    │   └── team_rule.yara
+    |
     ├── screenshots/
     │   ├── ghidra/
     │   ├── patching/
